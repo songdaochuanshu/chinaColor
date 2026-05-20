@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Copy, Check, Info, Palette, Share2, Heart } from 'lucide-react';
+import { Copy, Check, Info, Palette, Share2, Heart, Search } from 'lucide-react';
 import colorData from './assets/data/colors.json';
 
 interface IColor {
@@ -21,6 +21,19 @@ const App: React.FC = () => {
     CMYK: [0, 95, 95, 0]
   });
   const [copied, setCopied] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredColors = useMemo(() => {
+    if (!searchQuery.trim()) return colors;
+    const query = searchQuery.toLowerCase().trim();
+    return colors.filter(color => {
+      const nameMatch = color.name.includes(query);
+      const pinyinMatch = color.pinyin.toLowerCase().includes(query);
+      const hexMatch = color.hex.toLowerCase().includes(query);
+      const rgbMatch = color.RGB?.join(',').includes(query);
+      return nameMatch || pinyinMatch || hexMatch || rgbMatch;
+    });
+  }, [colors, searchQuery]);
 
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
@@ -103,19 +116,32 @@ const App: React.FC = () => {
 
       {/* Right Section: Color Grid */}
       <section className="lg:w-1/2 h-[40vh] lg:h-screen bg-white/40 backdrop-blur-xl overflow-y-auto p-6 lg:p-12">
-        <header className="mb-12 flex justify-between items-end">
-          <div>
-            <h2 className="text-4xl font-bold text-neutral-800">中国传统色</h2>
-            <p className="text-neutral-400 mt-2 tracking-widest uppercase text-xs">Traditional Chinese Colors</p>
+        <header className="mb-12">
+          <div className="flex justify-between items-end mb-8">
+            <div>
+              <h2 className="text-4xl font-bold text-neutral-800">中国传统色</h2>
+              <p className="text-neutral-400 mt-2 tracking-widest uppercase text-xs">Traditional Chinese Colors</p>
+            </div>
+            <div className="flex gap-4">
+              <Palette className="text-neutral-300" />
+              <Info className="text-neutral-300 cursor-help" />
+            </div>
           </div>
-          <div className="flex gap-4">
-            <Palette className="text-neutral-300" />
-            <Info className="text-neutral-300 cursor-help" />
+          
+          <div className="relative group">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-300 group-focus-within:text-neutral-500 transition-colors" size={18} />
+            <input 
+              type="text"
+              placeholder="搜索颜色名称、HEX、RGB..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-white/50 border-b border-neutral-100 py-4 pl-12 pr-4 focus:outline-none focus:border-neutral-800 transition-all font-light tracking-widest"
+            />
           </div>
         </header>
 
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-6 gap-4">
-          {colors.map((color, index) => (
+          {filteredColors.map((color, index) => (
             <motion.div
               key={color.name}
               initial={{ opacity: 0, scale: 0.9 }}
