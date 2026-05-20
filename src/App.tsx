@@ -70,22 +70,22 @@ const App: React.FC = () => {
                   {selectedColor.hex.toUpperCase()}
                 </p>
               </div>
-              <div className="group cursor-pointer" onClick={() => copyToClipboard(`rgb(${selectedColor.RGB.join(',')})`, 'rgb')}>
+              <div className="group cursor-pointer" onClick={() => copyToClipboard(`rgb(${selectedColor.RGB?.join(',')})`, 'rgb')}>
                 <p className="text-xs uppercase tracking-widest opacity-60 mb-1 flex items-center gap-2">
                   RGB {copied === 'rgb' && <Check size={12} className="text-green-300" />}
                 </p>
                 <p className="text-lg font-light tracking-widest group-hover:opacity-100 opacity-90 transition-opacity">
-                  {selectedColor.RGB.join(', ')}
+                  {selectedColor.RGB?.join(', ')}
                 </p>
               </div>
             </div>
             <div className="space-y-4">
-              <div className="group cursor-pointer" onClick={() => copyToClipboard(`cmyk(${selectedColor.CMYK.join(',')})`, 'cmyk')}>
+              <div className="group cursor-pointer" onClick={() => copyToClipboard(`cmyk(${selectedColor.CMYK?.join(',')})`, 'cmyk')}>
                 <p className="text-xs uppercase tracking-widest opacity-60 mb-1 flex items-center gap-2">
                   CMYK {copied === 'cmyk' && <Check size={12} className="text-green-300" />}
                 </p>
                 <p className="text-lg font-light tracking-widest group-hover:opacity-100 opacity-90 transition-opacity">
-                  {selectedColor.CMYK.join(', ')}
+                  {selectedColor.CMYK?.join(', ')}
                 </p>
               </div>
               <div className="flex gap-4 mt-4">
