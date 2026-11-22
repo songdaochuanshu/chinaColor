@@ -22,7 +22,9 @@ ChinaColor 是一个致力于展示和传承中国传统色彩美学的交互式
 
 | 桌面端 1440 × 900 | 手机端 390 × 844 |
 | :---: | :---: |
-| <img src="docs/preview-desktop.png" alt="ChinaColor 桌面端界面" width="560"> | <img src="docs/preview-mobile.png" alt="ChinaColor 手机端界面" width="200"> |
+| <a href="docs/preview-desktop.png"><img src="docs/preview-desktop.png" alt="ChinaColor 桌面端界面" width="560"></a> | <a href="docs/preview-mobile.png"><img src="docs/preview-mobile.png" alt="ChinaColor 手机端界面" width="200"></a> |
+
+（点击图片可查看原图）
 
 ### 主要特性
 
@@ -94,7 +96,9 @@ No installation needed — open [chinacolor.openserve.cloud](https://chinacolor.
 
 | Desktop 1440 × 900 | Mobile 390 × 844 |
 | :---: | :---: |
-| <img src="docs/preview-desktop.png" alt="ChinaColor desktop interface" width="560"> | <img src="docs/preview-mobile.png" alt="ChinaColor mobile interface" width="200"> |
+| <a href="docs/preview-desktop.png"><img src="docs/preview-desktop.png" alt="ChinaColor desktop interface" width="560"></a> | <a href="docs/preview-mobile.png"><img src="docs/preview-mobile.png" alt="ChinaColor mobile interface" width="200"></a> |
+
+(Click a preview to open it full size.)
 
 ### Key Features
 
