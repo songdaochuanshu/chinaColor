@@ -1,10 +1,28 @@
+<div align="center">
+
 # ChinaColor
+
+**中国传统色彩 · Traditional Chinese Colors**
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-chinacolor.openserve.cloud-1772B4?style=flat-square&logo=cloudflare&logoColor=white)](https://chinacolor.openserve.cloud)
+
+在线体验 · Live Demo：<https://chinacolor.openserve.cloud>
+
+</div>
 
 ## 简体中文
 
 ### 项目概述
 
 ChinaColor 是一个致力于展示和传承中国传统色彩美学的交互式 Web 应用。它提供了一个沉浸式的平台，让用户可以探索丰富多彩的中国传统颜色，了解其文化内涵，并获取详细的色彩数值（HEX, RGB, CMYK）。项目采用最新的 React 18、TypeScript、Vite 5 和 Tailwind CSS 构建，并以轻量的 CSS 动画呈现流畅的过渡，旨在以现代技术重现古典韵味。
+
+### 在线体验
+
+无需安装，浏览器打开 [chinacolor.openserve.cloud](https://chinacolor.openserve.cloud) 即可使用；手机端按单手操作优化，500 多种颜色也能随手翻阅。
+
+| 桌面端 1440 × 900 | 手机端 390 × 844 |
+| :---: | :---: |
+| <img src="docs/preview-desktop.png" alt="ChinaColor 桌面端界面" width="560"> | <img src="docs/preview-mobile.png" alt="ChinaColor 手机端界面" width="200"> |
 
 ### 主要特性
 
@@ -69,6 +87,14 @@ yarn build
 ### Project Overview
 
 ChinaColor is an interactive web application dedicated to showcasing and preserving the aesthetics of traditional Chinese colors. It provides an immersive platform for users to explore a rich palette of traditional Chinese hues, understand their cultural significance, and obtain detailed color values (HEX, RGB, CMYK). Built with the latest React 18, TypeScript, Vite 5, and Tailwind CSS, with lightweight CSS motion for fluid transitions, the project aims to revive classical charm with modern technology.
+
+### Try It Online
+
+No installation needed — open [chinacolor.openserve.cloud](https://chinacolor.openserve.cloud) in any browser. The mobile layout is tuned for one-handed use, so all 500+ colours are comfortable to browse.
+
+| Desktop 1440 × 900 | Mobile 390 × 844 |
+| :---: | :---: |
+| <img src="docs/preview-desktop.png" alt="ChinaColor desktop interface" width="560"> | <img src="docs/preview-mobile.png" alt="ChinaColor mobile interface" width="200"> |
 
 ### Key Features
 
