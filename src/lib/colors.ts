@@ -14,10 +14,6 @@ interface RawColor {
 const INK = '#0f0f0f';
 const PAPER = '#ffffff';
 
-function toHex(value: number): string {
-  return value.toString(16).padStart(2, '0');
-}
-
 export function loadColors(): IColor[] {
   const list = (colorData as unknown as { colorList: RawColor[] }).colorList;
   return list.map((raw) => {
@@ -44,10 +40,6 @@ export function hexToRgb(hex: string): [number, number, number] {
   const parsed = Number.parseInt(value.slice(0, 6), 16);
   if (Number.isNaN(parsed)) return [0, 0, 0];
   return [(parsed >> 16) & 255, (parsed >> 8) & 255, parsed & 255];
-}
-
-export function rgbToHex(rgb: [number, number, number]): string {
-  return `#${rgb.map((channel) => toHex(channel)).join('')}`;
 }
 
 /** WCAG 2.1 relative luminance. */
@@ -137,5 +129,3 @@ export function rgbString(color: IColor): string {
 export function cmykString(color: IColor): string {
   return `cmyk(${color.CMYK.join(', ')})`;
 }
-
-export { INK, PAPER };

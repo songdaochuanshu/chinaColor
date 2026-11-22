@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Check, Heart, Info, Share2, Shuffle } from 'lucide-react';
-import { readableOn, rgbString, cmykString, withAlpha } from '../lib/colors';
+import { cmykString, readableOn, rgbString } from '../lib/colors';
 import type { IColor } from '../types';
 
 type CopyField = 'hex' | 'rgb' | 'cmyk';
